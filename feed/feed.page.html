@@ -1,0 +1,47 @@
+<ion-header size="large"#header>
+  <ion-toolbar>
+    
+  <ion-title >
+    <img src="../../assets/img/5.png" class="y"/>
+ </ion-title>
+ <ion-buttons slot="primary">
+  <ion-button (click)="flipPage()">
+    <ion-icon color="tertiary"size="large"slot="icon-only" name="search"></ion-icon>
+  </ion-button>
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  
+
+
+<div class="tar">
+  <p>stories</p>
+  <p>bientôt dispo</p>
+</div>
+<div class="to">
+  <div class="three">
+    <div class="add_story">
+      <img (click)="lets()"src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+      <ion-icon color="primary" name="add-circle"></ion-icon>
+      
+    </div>
+    <p id="profile-info" *ngIf="username" style="color: #999">{{ username }}</p>
+  </div>
+ </div>
+
+
+<hr>
+<br>
+
+
+
+
+
+
+
+
+</ion-content>
+
+

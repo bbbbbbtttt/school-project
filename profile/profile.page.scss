@@ -1,0 +1,83 @@
+#images{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 400px;
+}
+.image{
+    margin-left: 6px;
+    margin-right: 4px;
+}
+.main-image{
+    width: 600px;
+   
+    margin-top: 10px;
+}
+
+.header {
+    background-color:#7e57ff;
+    height: 200px;
+    padding-top: 1px;
+   
+}
+.h2 {
+    color: white;
+  font-weight: bold; 
+  text-align: center;
+  
+
+
+}
+
+
+.getlas {
+    height: 130px;
+    width: 130px;
+    border-radius:50%;
+    overflow: hidden;
+}
+.bordo {
+   border: 4px solid white;
+   border-radius:50% ;
+   width: fit-content;
+}
+.pop {
+    border: 6px solid #7e57ff;
+    border-radius:50% ;
+    width: fit-content;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    margin-top: -76px;
+}
+.flex2 {
+    display: flex;
+    width: 40px;
+    margin-left: 15px;
+    margin-top: -35px;
+   
+    
+}
+img {
+    width: 100%;
+}
+.username{
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.postboost3{
+    --background: linear-gradient(205deg, rgb(181, 39, 242) 30%,#1EE3DD 70%);
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    ion-icon{
+        color: white
+    }
+}
+.last{
+    text-align: center;
+    margin-right: 50px;
+}

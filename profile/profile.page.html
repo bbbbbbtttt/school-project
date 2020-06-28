@@ -1,0 +1,169 @@
+<ion-content class="content">
+
+  <div class="header">
+      <div class="h2"id="profile-info" *ngIf="username">
+        <p>{{ username }}</p>
+      </div>
+      <div >
+          <img (click)="lets()" class="flex2" src="../../assets/icon/settings.png">
+      </div>
+  </div>
+<div class="flex">
+ <div class="pop"> 
+  <div class="bordo">
+     <div class="getlas">
+     <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+     </div>
+  </div>
+ </div>
+</div>
+
+<app-loading *ngIf="!posts"></app-loading>
+
+
+
+<ion-card   (click)="goTo3(postboost3)"*ngFor="let postboost3 of postsboost3" >
+  
+  <ion-item class="postboost3" lines="none">
+    <ion-avatar slot="start">
+      <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+    </ion-avatar>
+      
+      
+     
+      <ion-label>
+        <h2>{{ username }}</h2>
+      </ion-label>
+      <ion-icon  slot="end"name="rocket-outline"></ion-icon>
+     </ion-item>
+    
+      
+  
+      
+       
+    
+   
+  
+       
+  
+   <img  src="//ucarecdn.com/{{ postboost3 }}/-/scale_crop/500x500/center/"/>
+   
+  
+  </ion-card >
+
+
+
+
+
+
+  
+  
+  
+  <ion-card   (click)="goTo2(postboost2)"*ngFor="let postboost2 of postsboost2" >
+  
+  <ion-item color="danger"class="username" lines="none">
+    <ion-avatar slot="start">
+      <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+    </ion-avatar>
+      
+      
+     
+      <ion-label>
+        <h2>{{ username }}</h2>
+      </ion-label>
+      <ion-icon slot="end"name="star"></ion-icon>
+     
+     </ion-item>
+    
+      
+  
+      
+       
+      
+   
+  
+       
+  
+   <img  src="//ucarecdn.com/{{ postboost2 }}/-/scale_crop/500x500/center/"/>
+  
+  </ion-card >
+
+
+
+
+
+  <ion-card  color="danger" (click)="goTo1(postboost1)"*ngFor="let postboost1 of postsboost1" >
+  
+  <ion-item class="username" lines="none">
+    <ion-avatar slot="start">
+      <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+    </ion-avatar>
+      
+      
+     
+      <ion-label>
+        <h2>{{ username }}</h2>
+      </ion-label>
+      <ion-icon  slot="end"name="checkmark-outline"></ion-icon>
+     </ion-item>
+    
+    
+      
+  
+      
+       
+      
+   
+  
+       
+  
+   <img  src="//ucarecdn.com/{{ postboost1 }}/-/scale_crop/500x500/center/"/>
+  
+  </ion-card >
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+<ion-card   (click)="goTo(post)"*ngFor="let post of posts" >
+  
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"/>
+    </ion-avatar>
+      
+      
+     
+    <ion-label class="last">
+      <h2 >{{ username }}</h2>
+    </ion-label>
+    </ion-item>
+      
+  
+      
+       
+      
+   
+  
+       
+  
+   <img  src="//ucarecdn.com/{{ post }}/-/scale_crop/500x500/center/"/>
+  
+  </ion-card >
+
+  
+
+   
+  
+
+</ion-content>

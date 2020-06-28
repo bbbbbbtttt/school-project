@@ -1,0 +1,46 @@
+<ion-content class="loginblack">
+
+  <div class="padding">
+ <div class="logo">
+   
+ </div>
+
+<ion-item>
+  <ion-label color="light">nom d'utilisateur</ion-label>
+   <ion-input color="light" placeholder="your username" type="text" [(ngModel)]="username"></ion-input>
+</ion-item>
+
+
+
+
+<ion-item>
+ <ion-label color="light">mot de passe</ion-label>
+ <ion-input color="light" placeholder="your password" type="password" [(ngModel)]="password"></ion-input>
+</ion-item>
+
+
+
+
+<ion-item lines="none">
+  <ion-button color="light" slot="end" fill="clear">mot de passe oublier</ion-button>
+</ion-item>
+
+
+
+
+
+
+<ion-button color="light" fill="outline" shape="round" expand="block" (click)="login()">connection</ion-button>
+
+
+
+
+
+
+<br>
+<ion-button shape="round" expand="block" (click)="register()">inscription</ion-button>
+
+</div>
+
+    
+</ion-content>

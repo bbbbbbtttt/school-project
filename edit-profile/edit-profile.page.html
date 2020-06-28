@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="retour" defaultHref="tabs/profile"></ion-back-button>
+     </ion-buttons>
+    <ion-title>modifier le profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content"padding>
+
+  <app-loading *ngIf="busy"></app-loading>
+  <div *ngIf="!busy">
+ <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)"/>
+  
+ <div>
+    <ion-img class="profile-pic"(click)="updateProfilePic()" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
+  </div>
+
+  <div class="profile-info">
+    <ion-item>
+      <ion-label position="floating">nom d'utilisateur</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">entrer votre mot de passe actuel* </ion-label>
+      <ion-input [(ngModel)]="password"></ion-input>
+    </ion-item>  
+    
+    <ion-item>
+      <ion-label position="floating">nouveau mot de passe</ion-label>
+      <ion-input [(ngModel)]="newpassword"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-button color="danger" fill="outline" shape="round" expand="block" (click)="updateDetails()">modifier le profil</ion-button>
+
+  </div>
+</div>
+
+    <p class="no-face">*obligatoire même pour changer le nom d'utilisateur</p>
+ 
+</ion-content>

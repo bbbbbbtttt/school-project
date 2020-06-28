@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>publier annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content" padding>
+<div class="buttonboost">
+    <ion-button (click)="gotoseletedboost()"class="newbtn" shape="round">boost ton annonce gratuitement*</ion-button>
+  </div>
+ <br>
+
+
+    <app-loading *ngIf="busy"></app-loading>
+  
+
+<div class="center" *ngIf="!busy">
+      <div class="camera"></div>
+      
+      <input flex type="file" *ngIf="!imageURL"  (change)="fileChanged($event)" class="filebtn" #filebtn/>
+      <ion-button class="newbtn" shape="round" fill="outline" (click)="selectImage()" *ngIf="!imageURL"  >+</ion-button>
+      
+
+  <div *ngIf="imageURL">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+            <ion-img  src="https://ucarecdn.com/{{ imageURL }}/-/preview/{{ activeEffect }}"></ion-img>
+            <ion-card-content>
+              <div class="ttt">
+              <ion-textarea  placeholder="Entrer le titre de l'annonce" [(ngModel)]="titre"></ion-textarea>
+              </div>
+              <br>
+              <div class="tt" >
+              <ion-textarea   placeholder="Description" [(ngModel)]="desc"></ion-textarea>
+              <br>
+              <ion-textarea placeholder="Prix" [(ngModel)]="desc2"></ion-textarea>
+            </div>
+            <ion-textarea placeholder="position" [(ngModel)]="position"></ion-textarea>
+            
+            <div class="whitetext">
+              <ion-label>detail :</ion-label>
+              <ion-select [(ngModel)]="notifications" value="notifications" interface="action-sheet">
+                
+              
+                <ion-select-option value="vente">vente</ion-select-option>
+                <ion-select-option value="location">location</ion-select-option>
+              </ion-select>
+            
+              </div>
+            
+              <ion-button  shape="round"  (click)="createPost()">post</ion-button>
+            </ion-card-content>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col [class.active]="activeEffect==effects.effect1" (click)="setSelected('effect1')">
+        <ion-img src="https://ucarecdn.com/{{ imageURL }}/{{ scaleCrop }}/"></ion-img>
+      </ion-col>
+      <ion-col [class.active]="activeEffect==effects.effect2" (click)="setSelected('effect2')">
+        <ion-img src="https://ucarecdn.com/{{ imageURL }}/{{ scaleCrop }}/{{ effects.effect2 }}"></ion-img>
+      </ion-col>
+      <ion-col [class.active]="activeEffect==effects.effect3"(click)="setSelected('effect3')">
+        <ion-img src="https://ucarecdn.com/{{ imageURL }}/{{ scaleCrop }}/{{ effects.effect3 }}"></ion-img>
+      </ion-col>
+      <ion-col [class.active]="activeEffect==effects.effect4"(click)="setSelected('effect4')">
+        <ion-img src="https://ucarecdn.com/{{ imageURL }}/{{ scaleCrop }}/{{ effects.effect4 }}"></ion-img>
+      </ion-col>
+      <ion-col [class.active]="activeEffect==effects.effect5"(click)="setSelected('effect5')">
+        <ion-img src="https://ucarecdn.com/{{ imageURL }}/{{ scaleCrop }}/{{ effects.effect5 }}"></ion-img>
+      </ion-col>
+      
+  
+
+      </ion-row>
+
+      <ion-row *ngIf="noFace">
+        <ion-col size="12">
+          <p class="no-face">ajouter votre annonce</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  
+</div>
+ </div>
+
+
+
+ 
+
+
+</ion-content>

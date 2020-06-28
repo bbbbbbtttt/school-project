@@ -1,0 +1,59 @@
+<ion-content class="loginDark">
+  
+
+
+  <app-loading *ngIf="!post"></app-loading>
+
+
+<div *ngIf="post as postData">
+<ion-buttons slot="start">
+<ion-back-button  text="retour" defaultHref="tabs/profile"></ion-back-button>
+   </ion-buttons>
+<ion-item  no-padding lines="none" id="profile-info" *ngIf="username">
+     <ion-avatar slot="start">
+      <ion-img class="profi" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img> 
+     </ion-avatar>
+    <ion-label class="tex">{{ username }}</ion-label>
+    </ion-item>
+   <br>
+    <div class="d">{{ postData.titre }}</div>
+    <br>
+  <ion-slides [options]="sliderOpts" zoom>
+    
+    <ion-slide >
+    
+    <div class="zoom-container">
+        <img (click)="toggleHeart()" src="https://ucarecdn.com/{{ postID }}/-/preview/{{ post.effect }}/" >
+    </div>
+      </ion-slide>
+    </ion-slides>
+    
+
+    
+
+   <div>
+     <p class="d" text-wrap>{{ postData.desc }}</p>
+     
+     <br>
+      <ion-button shape="round" fill="outline"expand="block" >{{ postData.desc2 }}</ion-button>
+  </div>
+  <ion-item lines="none" no-padding (click)="toggleHeart()">
+    <ion-icon color="warning"size="large"[name]="heartType"></ion-icon>
+    
+  </ion-item>
+  <br>
+  <br>
+  <p class="h1">numero de tel:</p>
+  
+  <p class="details"[(ngModel)]="copyText"text-wrap>{{ num }}</p>
+  
+  <hr>
+  <p class="h1">mail:</p>
+  <p class="details" text-wrap>{{ details }}</p>
+  
+  
+   
+    
+</div>
+
+</ion-content>
